@@ -1,0 +1,24 @@
+<p>news works!</p>
+<div class="div-upload">
+  <input type="file" id="upload" (change)="fileChange($event)" style="display:none">
+  <button (click)="selectFile($event)">选择Excel文件加载</button>
+</div>
+<div>
+  <nz-table [nzData]="list" [nzShowPagination]="false">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th nzWidth="300px"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of list">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
