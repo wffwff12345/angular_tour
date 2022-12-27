@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies":[ "redux-persist"],
+            "allowedCommonJsDependencies":[ "redux-persist","file-saver"],
             "outputPath": "dist/angular-tour",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -75,7 +75,7 @@
             "production": {
               "browserTarget": "angular-tour:build:production"
 
-              
+
             },
             "development": {
               "browserTarget": "angular-tour:build:development"
@@ -87,7 +87,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "angular-tour:build"
-           
+
           }
         },
         "test": {

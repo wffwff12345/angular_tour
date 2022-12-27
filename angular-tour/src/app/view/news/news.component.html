@@ -1,10 +1,11 @@
-<p>news works!</p>
+
 <div class="div-upload">
   <input type="file" id="upload" (change)="fileChange($event)" style="display:none">
-  <button (click)="selectFile($event)">选择Excel文件加载</button>
+  <button nz-button nzType="primary" (click)="selectFile($event)">选择Excel文件加载</button>
 </div>
 <div>
-  <nz-table [nzData]="list" [nzShowPagination]="false">
+  <nz-table #table [nzData]="list"  nzEllipsis="true" nzBordered="true"
+    nzShowPagination="true" nzSize="small" nzBreakWord="true" [nzPageSize]="size" [nzScroll]="{ y: '300px' }">
     <thead>
       <tr>
         <th>ID</th>
@@ -14,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of list">
+      <tr *ngFor="let i of table.data">
         <td>{{i.id}}</td>
         <td>{{i.name}}</td>
         <td>{{i.age}}</td>
@@ -22,3 +23,5 @@
     </tbody>
   </nz-table>
 </div>
+<input type="file" id="fileUrl" (change)="url($event)" style="display:none">
+<button nz-button nzType="primary" (click)="fileUrl($event)">文件下载地址</button>

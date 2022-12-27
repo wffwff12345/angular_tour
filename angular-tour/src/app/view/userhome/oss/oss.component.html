@@ -1,11 +1,15 @@
 <div class="body-wrapper">
-        <nz-upload style="height:300px;width:300px" nzType="drag"  [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
-            <button nz-button>
-              <i nz-icon nzType="upload"></i>
-              请选择图片文件
-            </button>
+        <nz-upload  nzType="drag"
+        class="avatar-uploader"
+        [(nzFileList)]="fileList"
+        [nzBeforeUpload]="beforeUpload"
+        [nzMultiple]="false"
+        nzAccept=".png,.jpeg,.jpg"
+        [nzShowButton]="fileList.length === 0"
+        (nzChange)="changeImage($event)"
+        >
         </nz-upload>
-    
+
         <button nz-button [nzType]="'primary'"  (click)="handleUpload()"
             [disabled]="fileList.length === 0" style="margin-top: 16px">
             {{ fileList.length === 0 ? '请选择上传的图片' : '上传' }}

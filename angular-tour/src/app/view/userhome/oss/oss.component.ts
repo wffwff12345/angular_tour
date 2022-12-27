@@ -21,7 +21,14 @@ export class OssComponent implements OnInit {
     this.fileList = this.fileList.concat(file);
     return false;
   };
-
+  changeImage(event:any){
+   console.log(event);
+   console.log(event.type)
+   console.log(event.file)
+   console.log(event.file.response)
+   console.log(event.file.url)
+   console.log(event.file.response.code)
+  }
   handleUpload(): void {
     let length = this.fileList.length;
 

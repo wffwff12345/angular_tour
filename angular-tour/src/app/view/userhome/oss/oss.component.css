@@ -8,3 +8,8 @@
     width: 300px;
     height: 300px;
 }
+:host ::ng-deep .avatar-uploader > .ant-upload {
+  margin-left: 40%;
+  width: 128px;
+  height: 128px;
+}

@@ -1,6 +1,6 @@
 <div class="search-wrapper">
     <nz-input-group nzPrefixIcon="user" [nzSuffix]="inputClearTpl" >
-        <input type="text" nz-input [(ngModel)]="getdto.name" placeholder="请输入账户名" (blur)="search()" (change)="search()" />
+        <input type="text" nz-input [(ngModel)]="getdto.name" placeholder="请输入账户名" (blur)="search()" (change)="search()" (input)="search()"/>
     </nz-input-group>
     <ng-template #inputClearTpl>
         <i

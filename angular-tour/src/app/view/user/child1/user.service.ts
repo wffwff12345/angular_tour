@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   constructor(private http:HttpClient) { }
-   
+
   getuser(data:any){
     const url="/admin/user/getusers"
-    return this.http.post(url,data)
+    return this.http.post(url,data,{observe:'response'})
   }
   getByid(id:number){
     const url=`/admin/user/getByid/${id}`

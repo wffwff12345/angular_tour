@@ -45,11 +45,11 @@ export class Child1Component implements OnInit {
     const reqdto={name,page,size}
     this.isloading=true
     this.service.getuser(reqdto).subscribe((res: any) => {
-      console.log(reqdto);
+      console.log('response');
       console.log(res);
-      this.listOfData = res.data;
+      this.listOfData = res.body.data;
       console.log(res.data);
-      this.total=res.total;
+      this.total=res.body.total;
       this.isloading=false;
     })
 
@@ -61,7 +61,7 @@ export class Child1Component implements OnInit {
     this.getdto.name=''
     this.getusers()
   }
-     
+
   deletecancel(){
     this.message.info('已取消删除!')
   }
@@ -131,7 +131,7 @@ export class Child1Component implements OnInit {
     }
     if(!this.validateForm.valid){
       console.log('验证失败！')
-      return 
+      return
     }
     const {name,password,age,email,phone,status}=this.validateForm.value
     const uid=this.userid
